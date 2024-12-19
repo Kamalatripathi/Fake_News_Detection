@@ -17,8 +17,9 @@ function checkNews() {
     setTimeout(() => {
         loading.classList.add('hidden');
 
-        // Simulate fake news detection logic
-        const isFake = Math.random() < 0.5;
+        // Replace this random logic with a consistent test or real API call
+        const fakeKeywords = ['fake', 'hoax', 'rumor'];
+        const isFake = fakeKeywords.some(keyword => headline.toLowerCase().includes(keyword));
 
         if (isFake) {
             resultText.textContent = "🚨 This news is likely FAKE!";
@@ -29,5 +30,5 @@ function checkNews() {
         }
 
         resultSection.classList.remove('hidden');
-    }, 2000);
+    }, 2000);
 }
